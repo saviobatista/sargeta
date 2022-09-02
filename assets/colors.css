@@ -1,0 +1,48 @@
+
+/** STRIP COLORS */
+.wPOS .status, .wARR .status, .HOLD .status, .wTAXI .status, .wPUSH .status, .wCLR .status { background: linear-gradient(180deg, #FFFFDB 0%, #DBDB97 100%) }
+.cDEP .status, .cPOS .status, .cARR .status, .cRWY .status, .cTAXI .status, .cPUSH .status, .rCLR .status { background: linear-gradient(180deg, #D8F1D8 0%, #8CBE8C 100%) }
+.TAXI .status, .ARR .status, .BLKon .status, .DEP .status { background: linear-gradient(180deg, #FFE7D6 0%, #DBAA87 100%) }
+.SEQ .status { background: linear-gradient(180deg, #E7EEFF 0%, #8CA4DB 100%) }
+.cDEP .status { background: linear-gradient(180deg, #CFFFF6 0%, #78DBC7 100%) }
+
+.cpush .status, .ctaxi .status, .carr .status, .cdep .status { background: lightgreen }
+.wpush .status, .wtaxi .status, .hold .status { background: yellow;}
+.wait > div { background: lightslategrey}
+.standby > div { background: pink}
+.rclr > div { background: lightgreen }
+.wclr > div { background: lightyellow }
+
+.separador { border-top: solid thick #4871b7}
+.divisor { border-left: solid thin #4871b7}
+.highlight { color:#4871b7 }
+
+.strip { background: rgb(242,242,242); background: linear-gradient(180deg, rgba(242,242,242,1) 0%, rgba(196,196,196,1) 100%) }
+.strip h3, .strip p, .strip h2 { color:black; margin:0 }
+.strips > p { border-top: thin solid white; color:white }
+
+html,body { background: #708090 }
+#center, #right, #outter-right {border-left:solid thick #4871b7}
+#head,#foot,.title h5 { background: rgb(152,191,235); background: linear-gradient(180deg, rgba(152,191,235,1) 0%, rgba(185,213,242,1) 100%) }
+h1,h2,h3,h4,h5,h6 { color:#10257f }
+.lds-ring div { border: 8px solid #fff; border-color: #fff transparent transparent transparent }
+#blackout { background:black }
+.strip .cron { color:#333 }
+.vencido .eobt { border:solid thin orangered; background: orange }
+.window a { color:lightgrey }
+.window { color: dimgray; background:white }
+#windowBackground { background: black }
+.strip.funcional { color:black; background: linear-gradient(180deg, #FFF199 0%, #FFB500 50%, #FFF4DA 100%)  }
+#head > div:not(:last-child),
+#foot > div:not(:last-child) { border-right: solid thin #eef7ff }
+#head > div:first-child { border-left: solid thin #eef7ff }
+.strip { border-top: solid thick rgba(242,242,242,1); border-bottom: solid thick rgba(196,196,196,1) }
+.strip.active { margin:0;border:solid thick green }
+
+.box { border-bottom: #10257f solid thick;}
+.box { border:solid thick #708090 }
+.box.active { border-color: red }
+.title span { color:white }
+
+.strip.funcional > div > * { color:black }
+.strip.vencido .eobt { background:orange; border:solid thin black }

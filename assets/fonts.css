@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'corpo';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(AsapCondensed-Regular.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'titulo';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(AsapCondensed-Bold.woff2) format('woff2');
+}

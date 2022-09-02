@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>SARGETA</title>
+    <link href="assets/style.css" rel="stylesheet">
+    <link href="assets/colors.css" rel="stylesheet">
+    <link href="assets/icon.css" rel="stylesheet">
+    <link href="assets/fonts.css" rel="stylesheet">
+  </head>
+  <body>
+    <section id="head">
+      <div id="btLogin"><span class="profile icon"></span><h3>SMOU</h3></div>
+      <div><h1>SARGETA</h1><span>v 0.0.1A</span></div>
+      <div id="btDesktop" class="button"><h3>CLR, GND e TWR (Agrupado)</h3></div>
+      <div>&nbsp;</div>
+    </section>
+    <section id="body" class="CLR-GND-TWR">
+      <div id="left" class="side">
+        <div class="box active" id="AUTH">
+        <div class="title">
+          <h5>Autorizados</h5>
+          <span id="count-AUTH">0 strips</span>
+        </div>
+        <div class="strips" id="holder-AUTH">
+        </div>
+      </div>
+        <div class="separador"></div>
+        <div class="box" id="nCONF">
+        <div class="title">
+          <h5>Sem Clr</h5>
+          <span id="count-nCONF">0 strips</span>
+        </div>
+        <div class="strips" id="holder-nCONF">
+            <p><span>Inativas</span></p>
+        </div>
+
+      </div>
+      </div>
+      <div id="center">
+        <div class="box gnd" id="GND">
+            <div class="title">
+              <h5>DEP - GND + TWR</h5>
+              <span id="count-GND">0 strips</span>
+            </div>
+            <div class="strips">
+                <p id="torre"><span>Torre</span></p>
+                <p id="solo"><span>Solo</span></p>
+                <p id="park"><span>Estacionado</span></p> 
+            </div>
+        </div>
+        <div class="separador solo"></div>
+        <div class="box clr" id="CLR">
+            <div class="title">
+              <h5>Autorização</h5>
+              <span id="count-CLR">0 strips</span>
+            </div>
+            <div class="strips" id="holder-CLR">
+                <p><span>Autorização</span></p>
+            </div>
+        </div>
+      </div>
+      <div id="right">
+        <div class="box arr wide" id="ARR">
+            <div class="title">
+              <h5>ARR - TWR + GND</h5>
+              <span id="count-ARR">0 strips</span>
+            </div>
+            <div class="strips">
+                <p id="arr-gnd"><span>Solo</span></p>
+                <p id="arr-twr"><span>Torre</span></p> 
+                <p id="nCONT"><span>Sequenciamento</span></p> 
+            </div>
+        </div>
+        <div class="separador"></div>
+        <div class="box tow" id="TOW">
+            <div class="title">
+              <h5>Reboque</h5>
+              <span id="count-TOW">0 strips</span>
+            </div>
+            <div class="strips" id="holder-TOW"></div>
+        </div>
+      </div>
+      <div id="outter-right">
+          <div class="box seq" id="SEQ">
+              <div class="title">
+                <h5>sem Contato</h5>
+                <span id="count-SEQ">0 strips</span>
+              </div>
+              <div class="strips">
+                  <p id="seq"><span>Inativas</span></p>
+                  <p id="sempln"><span>sem Plano</span></p>
+              </div>
+          </div>
+      </div>
+    </section>
+    <section id="foot">
+      <!--<div><h3><i>Menu</i></h3></div>-->
+      <div><a id="btSair">Sair</a></div>
+      <div><div class="browser-solid icon"></div>a<div class="link icon"></div>a</div>
+      <!--<div><div class="rain icon"></div><span>METAR SBKP 121900Z 13014KT 9999 BKN047 27/16 Q1014=</span></div>-->
+      <div id="btRunway" class="button"><div class="arrow-down icon"></div><span class="pista">15 (ILS W)</span><span class="arrow-up icon"></span><span class="pista">15</span></div>
+      <div>
+        <span id="btConditions" class="button"><span class="rain icon"></span><span id="conditions">VMC</span></span>
+        <span id="btPraticabilidade" class="button"><span class="unlock icon"></span><span id="praticabilidade">PRT</span></span>
+        <span class="check icon"></span><span>DNT</span>
+      </div>
+      <div><span class="clock-h9m0 icon"></span><span id="hora">22:39:47</span></div>
+    </section>
+    <div id="wCronometro" class="window">
+      <p>Minutos (em branco para retirar):<br><input type="text" id="cronTempo" /></p>
+      <p><button id="cronOk">Ok</button></p>
+    </div>
+    <div id="wLogin" class="window">
+      <p>Usuário:<br><input type="text" id="loginUser" /></p>
+      <p>Senha:<br><input type="password" id="loginPass" /></p>
+      <p><button id="loginOk">Ok</button><button id="loginCancel">Cancelar</button></p>
+    </div>
+    <div id="wDesktop" class="window">
+      <p>Selecione o modo de uso:</p>
+      <ul>
+        <li><a href="javascript:void(0)" data-target="T">TWR</a></li>
+        <li><a href="javascript:void(0)" data-target="G">CLR + GND</a></li>
+        <li><a href="javascript:void(0)" data-target="F">CLR + GND + TWR</a></li>
+      </ul>
+    </div>
+    <div id="wRunway" class="window">
+      <p>Selecione a pista em uso:</p>
+      <ul id="pistas"></ul>
+    </div>
+    <div id="wConditions" class="window">
+      <p>Selecione as condições do aeródromo:</p>
+      <ul>
+        <li><a href="javascript:void(0)" onclick="setConditions('VMC')">VMC - Visual</a></li>
+        <li><a href="javascript:void(0)" onclick="setConditions('IMC')">IMC - Instrumento</a></li>
+        <li><a href="javascript:void(0)" onclick="setConditions('MA')">MA - Abaixo dos mínimos para pouso</a></li>
+        <li><a href="javascript:void(0)" onclick="setConditions('MD')">MD - Abaixo dos mínimos para decolagem</a></li>
+        <li><a href="javascript:void(0)" onclick="setConditions('BM')">BM - Abaixo dos mínimos</a></li>
+      </ul>
+    </div>
+    <div id="wPraticabilidade" class="window">
+      <p>Selecione a operação do aeródromo do aeródromo:</p>
+      <ul>
+        <li><a href="javascript:void(0)" onclick="setConditions('PRT')">PRT - Praticável</a></li>
+        <li><a href="javascript:void(0)" onclick="setConditions('IMP')">IMP - Impraticável</a></li>
+      </ul>
+      <p><textarea id="praticabilidadeMotivo" cols="80" rows="8"></textarea></p>
+    </div>
+    <div id="newChegada" class="window">
+      <table>
+        <tr><td colspan="2"><input type="text" id="newIndicativo" placeholder="Indicativo"></td></tr>
+        <tr><td><input type="text" id="newFrom" placeholder="Origem"></td><td><input type="text" id="newTo" placeholder="Destino"></td></tr>
+        <tr><td><input type="text" id="newTipo" placeholder="Tipo"></td><td><input type="hour" id="newEta" placeholder="ETA"></td></tr>
+      </table>
+    </div>
+    <div id="newSaida" class="window">
+      <table>
+        <tr><td colspan="2"><input type="text" id="newOutIndicativo" placeholder="Indicativo"></td></tr>
+        <!--<tr><td><input type="text" id="newFrom" placeholder="Origem"></td><td><input type="text" id="newTo" placeholder="Destino"></td></tr>
+        <tr><td><input type="text" id="newTipo" placeholder="Tipo"></td><td><input type="hour" id="newEta" placeholder="ETA"></td></tr>-->
+      </table>
+    </div>
+    <div id="windowBackground"></div>
+    <div id="blackout" class="d-none"></div>
+    <div id="loading"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+    <!--<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>-->
+    <!--<script src="client.js"></script>-->
+  </body>
+</html>

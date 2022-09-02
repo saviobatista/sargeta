@@ -1,0 +1,132 @@
+html,body { height:100vh; width: 100vw; overflow: hidden; padding: 0; margin:0; user-select:none }
+html,body,input, select, option, textarea { font-family: 'corpo',sans-serif; }
+.strip h2,.strip h3, .strip h1{ font-family: 'titulo'}
+h1 select, h1 input { font-size:36px;width:100%}
+
+/* PERSONALIZAÇÃO CONFORME MODO DE USO (TWR, GND, CLR) */
+.TWR #AUTH ~ div,
+.TWR #solo,
+.TWR #park,
+.TWR #solo ~ div,
+.TWR #arr-gnd, 
+.TWR #arr-gnd ~ div,
+.TWR #ARR ~ div { display: none }
+.TWR #arr-twr ~ div { display:table }
+.TWR .strips, .TWR #ARR .strips { height:90vh }
+
+.CLR-GND #torre,
+.CLR-GND #torre ~ div,
+.CLR-GND #arr-twr, 
+.CLR-GND #nCONT, 
+.CLR-GND #arr-twr ~ div,
+.CLR-GND #SEQ .strips *
+{ display:none}
+.CLR-GND #solo ~ div
+{ display: table}
+
+#head,#foot { width:100%; margin:0; padding: 0% }
+h1,h2,h3,h4,h5,h6 { display: inline; margin:0;padding:0}
+h3 {  font-size:12px}
+.icon + * { margin-left:22px }
+#head > div,#foot > div { padding:3px 8px; display: table-cell; vertical-align: middle }
+#head > div:first-child { float:right }
+#head > span, #body { clear: both }
+#head { position: absolute; top: 0 }
+#body { margin-top:34px; height:100vh - 94px }
+#foot { position: absolute; bottom: 0 }
+#left,#center,#right,#outter-right { float:left }
+#center { width:40vw }
+#right { width:33.9vw }
+#outter-right { width:13vw}
+#outter-right .strips { height:90vh}
+/* ESTILOS DO CLR+GND */
+.strip { margin:0 5px }
+.strip.active { margin:0 }
+.side { width:12vw }
+.title * { display: inline-block; margin: 0; padding: 2px }
+.title h5 { font-weight: 100; padding:2px }
+.side .title h5, #outter-right .title h5 { width:70% }
+.title span { font-size:10px }
+.slide .title h5 { width:58% }
+.slide .title span { width:28% }
+#right .title h5 { width:89% }
+#center .title h5 { width:89% }
+#center .title span { width:8% }
+.strips > p { font-size:12px; padding-top:5px }
+.strips > p > * { margin-left:10px }
+.strips { overflow-x:hidden; overflow-y:scroll; height: 43vh; padding-right:10px }
+.side .strip { width:100% }
+#center .strip { width:37vw }
+.strip { display:table; table-layout: fixed; padding:0 }
+.mini > div { display: inline-block; width:100% }
+.mini { margin:0 5px }
+.mini .posicao, .mini .eobt { text-align:right}
+.rota { overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.side .strip > div > div:last-child .icon:last-child { margin-top:25px }
+.strip h3, .strip p, .strip h2 { margin:0 }
+.strip h3 { font-size:22px }
+.strip h2 { font-size: 28px; letter-spacing: -2px }
+.strip h1 { font-size:40px }
+.bold { font-weight:bolder }
+.center { text-align:center }
+.right { text-align: right }
+.small { font-weight:lighter; font-size: smaller }
+.strip .locale { font-size:1.2em }
+.strip .middle { height:100% }
+.strip .middle > * { vertical-align:middle }
+.col-1 { width:8%;max-width:8% }
+.col-2 { width:16%;max-width:16% }
+.col-3 { width:25% }
+.col-4 { width:33% }
+.col-5 { width:41% }
+.col-6 { width:50% }
+.col-6-5 { width:54% }
+.col-7 { width:58% }
+.col-8 { width:66% }
+.col-9 { width:75% }
+.col-10{ width:83% }
+.col-11{ width:91% }
+.col-12{ width:100% }
+
+.status { padding-left:1%; height:100% }
+#center .status {width:14.605%}
+#right .status{width:14.1%}
+.strip { height:50px }
+.strip div { display:inline-block; vertical-align: top}
+.strip > div { height:100%}
+.strip.deleted { display: none!important }
+.wait > div:last-child, .standby > div:last-child, .rclr > div:last-child, .wclr > div:last-child { background:inherit!important}
+.strip.funcional { border-radius: 1em }
+.strip.funcional .icone { text-align: center; font-size: 3.7em; border-radius: inherit }
+.side .full, #outter-right .full { display:none; visibility: hidden }
+#center .mini, #right .mini { display:none; visibility: hidden }
+.holder > div { float:left }
+#outter-right .mini { width:9.6vw }
+.status { font-weight: bolder;font-size: x-large }
+#ARR .strips { height:60vh }
+#TOW .strips { height:26vh }
+.window,#windowBackground { position:absolute }
+#windowBackground { z-index: 99; top:0; left:0; width: 100vw; height:100vh; opacity:0.5 }
+.window { display:none; z-index: 100; top:50%; left:50%; width:30vw; height:30vh; margin-left:-15vw; margin-top:-15vh; padding:3vh; border-radius: 3vh }
+.window a { text-decoration: none }
+.button { cursor:pointer }
+.tooltip:hover:after { content: attr(data-tooltip); }
+#newChegada { top:10vh; left:90%; width:80px; height:80px; margin:0 }
+#newChegada table, #newChegada input { width:100% }
+#btLogin, #loginUser { text-transform: uppercase }
+.strip .cron { font-size:0.7em; font-weight:normal; margin-bottom: 0.1em;}
+
+.conf #wConfig, .conf #windowBackground { display:block!important }
+#blackout { position: absolute; top:0; left:0; width:100vw; height:100vh; cursor:none; z-index:99999; display:none}
+#loading { z-index: 9999; position: absolute; top: 40%; left: 50% }
+.lds-ring { display: inline-block; position: relative; width: 80px; height: 80px }
+.lds-ring div { box-sizing: border-box; display: block; position: absolute; width: 64px; height: 64px; margin: 8px; border-radius: 50%; animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite }
+.lds-ring div:nth-child(1) { animation-delay: -0.45s }
+.lds-ring div:nth-child(2) { animation-delay: -0.3s }
+.lds-ring div:nth-child(3) { animation-delay: -0.15s }
+@keyframes lds-ring { 0% { transform: rotate(0deg) } 100% { transform: rotate(360deg) } }
+
+.strip.funcional input, .strip.funcional h1, .strip.funcional p { width:100%; text-transform: uppercase;}
+.strip.funcional > div { vertical-align: unset }
+.strip.funcional > div > * { overflow: hidden; width:100%; display: inline-flex }
+#ARR .strip.funcional { width:100%}

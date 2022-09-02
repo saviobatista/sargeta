@@ -1,0 +1,4 @@
+node_modules
+.vscode
+Mov*
+config.json

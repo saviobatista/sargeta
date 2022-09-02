@@ -1,0 +1,32 @@
+{
+  "name": "sargeta",
+  "version": "1.0.0",
+  "description": "SARGETA",
+  "main": "main.js",
+  "repository": "https://github.com/abaif/sargeta",
+  "keywords": [
+    "strips",
+    "atc"
+  ],
+  "scripts": {
+    "test": "node node_modules\\electron\\cli.js .",
+    "pack": "node node_modules\\electron-builder\\out\\cli\\cli.js --dir",
+    "dist": "node node_modules\\electron-builder\\out\\cli\\cli.js "
+  },
+  "author": "Sávio Batista",
+  "license": "Private",
+  "devDependencies": {
+    "electron": "6.1.4",
+    "electron-builder": "^21.2.0",
+    "electron-packager": "^14.1.1",
+    "electron-reload": "^1.5.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "excel4node": "^1.7.2",
+    "exceljs-lightweight": "^1.14.0",
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "open-iconic": "^1.1.1"
+  }
+}
