@@ -1,8 +1,0 @@
-version: 1.0.0
-files:
-  - url: sargeta-Setup-1.0.0.exe
-    sha512: YPgpGhdY5adrvJ8WdhZlYRa6q/MkRExSOQ3u72+a+9UkMDgiHe6cj6o6rJmcuqCRMJdpAYfrCYv2SNniIEzXHg==
-    size: 47515187
-path: sargeta-Setup-1.0.0.exe
-sha512: YPgpGhdY5adrvJ8WdhZlYRa6q/MkRExSOQ3u72+a+9UkMDgiHe6cj6o6rJmcuqCRMJdpAYfrCYv2SNniIEzXHg==
-releaseDate: '2019-12-20T19:58:05.642Z'
