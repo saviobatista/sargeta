@@ -1,5 +1,5 @@
 const express = require('express'),
-  Excel = require('exceljs-lightweight'),
+  Excel = require('exceljs'),
   path = require('path'),
   fs = require('fs')
 module.exports = class Servidor {
