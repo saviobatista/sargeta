@@ -38,7 +38,10 @@ module.exports = class Servidor {
       res.json(ret)
     })
 
-    this.app.post('/login')
+    this.app.post('/login', (req, res) => {
+      // Handle POST login if needed
+      res.json({ status: 'ok' })
+    })
     this.log('Sistemas prontos.')
   }
   setConfig(newconfig) { 
