@@ -1,6 +1,6 @@
 const { ipcRenderer } = require('electron')
 
-// Expose ipcRenderer directly to the window (nodeIntegration enabled)
+// Expose ipcRenderer to the window for use after jQuery loads
 window.electronAPI = {
     ipcRenderer: ipcRenderer
-}
+} 

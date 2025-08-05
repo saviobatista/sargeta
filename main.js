@@ -14,7 +14,27 @@ let settingsFile = 'config.json',
 startup = () => {
   //SETTINGS
   ipcMain.on('settingsGet',e=>{ e.reply('settingsGet',settings) })
-  ipcMain.on('settingsSet',(e,data)=>{settings.maquina = data.maquina; settings.mode = data.mode; settings.servidor = data.servidor;fs.writeFileSync(settingsFile,JSON.stringify(settings));if(data.mode=='SERVER')createServerWindow();else createClientWindow();settingsWindow.close() })
+  ipcMain.on('settingsSet',(e,data)=>{
+    console.log('Received settings:', data); // Debug log
+    try {
+      settings.maquina = data.maquina; 
+      settings.mode = data.mode; 
+      settings.servidor = data.servidor;
+      console.log('Updated settings object:', settings); // Debug log
+      fs.writeFileSync(settingsFile,JSON.stringify(settings));
+      console.log('Settings saved to file'); // Debug log
+      if(data.mode=='SERVER') {
+        console.log('Creating server window'); // Debug log
+        createServerWindow();
+      } else {
+        console.log('Creating client window'); // Debug log
+        createClientWindow();
+      }
+      settingsWindow.close();
+    } catch(error) {
+      console.error('Error saving settings:', error); // Debug log
+    }
+  })
   //SERVER
   ipcMain.on('start',(e,newconfig)=>{ server.start(newconfig);e.reply('status',server.getStatus()) })
   ipcMain.on('status',e=>{ e.reply('status',server.getStatus()) })
@@ -74,9 +94,10 @@ startup = () => {
     createSettingsWindow()
 }
 createSettingsWindow = () => {
-  settingsWindow = new BrowserWindow({ width: 250, height: 280, resizable:false, maximizable:false, menuBarVisibility:false, autoHideMenuBar: true, webPreferences: { preload: path.resolve(__dirname,'settings.js') } })
+  settingsWindow = new BrowserWindow({ width: 250, height: 280, resizable:false, maximizable:false, menuBarVisibility:false, autoHideMenuBar: true, webPreferences: { nodeIntegration: true, contextIsolation: false, preload: path.resolve(__dirname,'settings.js') } })
   settingsWindow.loadFile(path.resolve(__dirname,'settings.html'))
   settingsWindow.on('closed', () => { settingsWindow = null })
+  settingsWindow.webContents.openDevTools()  // Enable developer tools for debugging
 }
 createServerWindow = () => {
   server = new Servidor()

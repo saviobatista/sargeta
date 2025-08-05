@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../node_modules/open-iconic/font/css/open-iconic-bootstrap.css">
+
+    <title>SARGETA - Servidor</title>
+  </head>
+  <body class="overflow-hidden">
+      <nav class="navbar bg-info">
+          <h3 class="navbar-brand">SARGETA</h3>
+              <button type="button" class="btn oi btn-light oi-warning" id="btStart" title="Está desligado, Iniciar"></button>
+              <button type="button" class="btn oi btn-primary oi-wifi d-none" id="btStop" title="Está funcionando, Terminar"></button>
+              <button type="button" class="btn oi btn-secondary oi-media-pause" id="btPlay" title="Está parado, Rodar" disabled></button>
+              <button type="button" class="btn oi btn-success oi-media-play d-none" id="btPause" title="Está rodando, Parar" disabled></button>
+              <button type="button" class="btn oi btn-warning oi-lock-locked" id="btTravar" title="Travar" disabled></button>
+              <button type="button" class="btn oi btn-danger oi-lock-unlocked d-none" id="btDestravar" title="Destravar" disabled></button>
+              <button type="button" class="btn oi btn-warning oi-thumb-up" id="btDerrubar" title="Derrubar" disabled></button>
+              <button type="button" class="btn oi btn-danger oi-thumb-down d-none" id="btLevantar" title="Levantar" disabled></button>
+          <span class="navbar-text ml-2">IP: <span id="ip"></span></span>
+          <span class="navbar-text ml-2" id="clock">00:00:00</span>
+          <!--<span class="navbar-text alert alert-dark oi oi-warning" id="status" role="alert"></span>-->
+      </nav>
+    <div class="container-fluid">
+      
+      <div class="row">
+      <div class="col-7">
+        <h5>Configurações:</h5>
+        <form id="config">
+          <div class="row">
+            <div class="form-group col">
+            <label for="porta">Porta</label>
+            <input type="text" class="form-control" name="porta" id="porta" placeholder="3000" size="4" data-toggle="tooltip" data-placement="top" title="Porta para conexão externa">
+            </div>
+            <div class="form-group col">
+            <label for="hora">Hora</label>
+            <input type="text" class="form-control" name="hora" id="hora" placeholder="10:00:00" size="4" data-toggle="tooltip" data-placement="top" title="Horário do SARGETA">
+            </div>
+            <div class="form-group col">
+            <label for="local">Criar Strip</label>
+            <input type="text" class="form-control" name="tempo" id="tempo" placeholder="10" size="4" data-toggle="tooltip" data-placement="top" title="Tempo em minutos para exibir strip e também conflitar posição ocupada">
+            </div>
+          </div>
+          <div class="row">
+              <div class="form-group col">
+              <label for="local">Local</label>
+              <input type="text" class="form-control" name="local" id="local" placeholder="SBKP" size="4">
+              </div>
+            <div class="form-group col">
+            <label for="pista">Pista em Uso</label>
+            <input type="text" class="form-control" name="pista" id="pista" placeholder="36" size="3" data-toggle="tooltip" data-placement="top" title="De acordo com as pistas disponíveis">
+            </div>
+            <div class="form-group col">
+            <label for="pistas">Pistas</label>
+            <input type="text" class="form-control" name="pistas" id="pistas" placeholder="18,36" size="5" data-toggle="tooltip" data-placement="top" title="Separados por vírgula">
+            </div>
+          </div>
+            <div class="form-group">
+            <label for="saidas">SID's</label>
+            <input type="text" class="form-control" name="saidas" id="saidas" placeholder="ANROV1A,BOCAS2A" data-toggle="tooltip" data-placement="top" title="Separados por vírgula">
+            </div>
+          <div class="form-group">
+            <label for="transicoes">Transições</label>
+            <textarea class="form-control" name="transicoes" id="transicoes" rows="3" placeholder="TEMAM,UTGER,RCL" data-toggle="tooltip" data-placement="top" title="Separados por vírgula"></textarea>
+          </div>
+            <div class="form-group">
+            <label for="file">Arquivo de planos</label>
+            <input type="file" class="form-control-file" name="file" id="file" data-toggle="tooltip" data-placement="top" title="Formato XLSX">
+          </div>
+        </form>
+      </div>
+      <div class="col-5">
+        <h5>Log:</h5>
+        <div id="log" class="overflow-auto d-inline-block"></div>
+        <h5>Conexões:</h5>
+        <div id="conexoes"></div>
+        <div><button id="btConverter" class="btn btn-primary">Conversor</button></div>
+      </div>
+    </div>
+    </div>
+
+    <script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
